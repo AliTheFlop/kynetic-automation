@@ -116,8 +116,8 @@ export default function HeroSection() {
                   style={{
                     backgroundColor: "var(--teal)",
                     color: "#0B1320",
-                    fontFamily: "var(--font-montserrat)",
-                    fontWeight: 600,
+                    fontFamily: "var(--font-manrope)",
+                    fontWeight: 700,
                     fontSize: "16px",
                     borderRadius: "6px",
                     padding: "14px 28px",

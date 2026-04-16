@@ -44,14 +44,28 @@ export default function Navbar() {
           </Link>
         </Column>
 
-        <Column horizontal="center">
+        <Row gap="24" vertical="center" horizontal="center">
+          <Link href="/blog" style={{ textDecoration: 'none' }}>
+            <Text 
+              variant="body-default-m" 
+              style={{ color: 'var(--neutral-on-background-strong)', fontWeight: 500 }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.color = 'var(--brand-solid-strong)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.color = 'var(--neutral-on-background-strong)';
+              }}
+            >
+              Blog
+            </Text>
+          </Link>
           <Link href="/contact" style={{ textDecoration: 'none' }}>
             <button
               style={{
                 backgroundColor: "var(--teal)",
                 color: "#0B1320",
-                fontFamily: "var(--font-montserrat)",
-                fontWeight: 600,
+                fontFamily: "var(--font-manrope)",
+                fontWeight: 700,
                 borderRadius: "6px",
                 padding: "8px 16px",
                 letterSpacing: "0.03em",
@@ -73,7 +87,7 @@ export default function Navbar() {
               Get in touch
             </button>
           </Link>
-        </Column>
+        </Row>
       </Row>
     </Row>
   );
