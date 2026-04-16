@@ -92,7 +92,7 @@ export default function HeroSection() {
               lineHeight: 1.1,
               margin: 0,
             }}>
-              Your Business Can Handle More<span style={{ color: "var(--teal)" }}>.</span>
+              Never worry about repetitive admin again<span style={{ color: "var(--teal)" }}>.</span>
             </h1>
 
             {/* Body */}

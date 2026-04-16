@@ -20,8 +20,8 @@ interface ContactFormLayoutProps {
 
 export default function ContactFormLayout({
   theme = "dark",
-  title = "Check if We’re a Good Match",
-  description = "Fill in the form and we'll be in touch within 24-48 hours to find out if we're a good fit",
+  title = "Let's See if We're a Good Fit",
+  description = "Fill out the form and we'll be in touch within 24-48 hours to find out if we're a good fit",
   details
 }: ContactFormLayoutProps) {
   const [focusedField, setFocusedField] = useState<string | null>(null);
