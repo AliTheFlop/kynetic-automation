@@ -2,7 +2,7 @@
 title: "AI Automation Sydney: Why Manual Operations Are Quietly Killing Local Businesses"
 publishedAt: "2026-04-16"
 summary: "Sydney SMEs are losing hours to admin every week. Here's how AI automation is helping local businesses scale without hiring — and what to look for in a provider."
-slug: "ai-automation-sydney"
+slug: "ai-automation-sydney-why-manual-operations-are-quietly-killing-local-businesses"
 ---
 If you're running a business in Sydney right now, you already know the squeeze.
 
