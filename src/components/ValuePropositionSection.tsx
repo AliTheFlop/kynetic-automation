@@ -4,13 +4,34 @@ import { Row, Column } from "@once-ui-system/core";
 import { useState } from "react";
 
 const faqs = [
-  "What exactly do you automate? What do you actually do to help my business?",
-  "Will this actually work for my type of business?",
-  "How is this different from tools I've already tried, like Zapier or a chatbot?",
-  "What does it cost, and how long before I see a return on my investment?",
-  "How long does it take to set up, and how much of my time does it need?",
-  "What happens when something breaks or goes wrong? Am I on my own?",
-  "Do I need to change the tools I'm already using?"
+  {
+    question: "What exactly do you automate? What do you actually do to help my business?",
+    answer: "The stuff that's running through you personally right now. Lead follow-ups. Quote generation. Client onboarding. Scheduling. Invoice chasing. We find processes eating the most time in your business and make them run without anyone touching them. The business keeps moving while you're doing literally anything else."
+  },
+  {
+    question: "Will this actually work for my type of business?",
+    answer: "That's what the first call figures out. We try to figure out where you can save time and money within your current processes, and then tell you honestly whether automation fixes it. If it's not the right fit, we'll say so."
+  },
+  {
+    question: "How is this different from tools I've already tried, like Zapier or a chatbot?",
+    answer: "Those tools still needed you to hold them together. When you run it with us, we'll handle the messy nodes, integrations, and bug fixes. For example, when a lead comes in, the system responds, qualifies, follows up, and flags you only if it actually needs a human. You wake up and the work has already happened."
+  },
+  {
+    question: "What does it cost, and how long before I see a return on my investment?",
+    answer: "Most clients recover the cost within the first two months through leads that used to go cold, quotes that used to take half a day, and follow-ups that used to not happen at all. We'll show you the numbers before you spend anything."
+  },
+  {
+    question: "How long does it take to set up, and how much of my time does it need?",
+    answer: "Two hours from you upfront so we understand exactly how your business runs. The automations are live within 14 days, and at that point we walk you through how to read what it's doing. Nothing technical, just \"here's where your leads are, here's what's been sent, here's what's coming.\" Once you've got that, you're done. The system runs. You'll notice it when things that used to fall through the cracks just stop falling through the cracks."
+  },
+  {
+    question: "What happens when something breaks or goes wrong? Am I on my own?",
+    answer: "That's what the ongoing management covers. You let us know, we fix it. You're not buying a tool and figuring it out yourself. You're handing the whole thing to us."
+  },
+  {
+    question: "Do I need to change the tools I'm already using?",
+    answer: "We try to work around what you've already got, because the goal is to make your existing setup actually function as one thing, but this could happen on rare occasions if you use niche software."
+  }
 ];
 
 export default function ValuePropositionSection() {
@@ -123,7 +144,7 @@ export default function ValuePropositionSection() {
                         color: "var(--bone)",
                         paddingRight: "16px"
                       }}>
-                        {faq}
+                        {faq.question}
                       </span>
                       <span style={{
                         color: "var(--teal)",
@@ -149,7 +170,7 @@ export default function ValuePropositionSection() {
                         color: "var(--slate)",
                         lineHeight: 1.65,
                       }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+                        {faq.answer}
                       </div>
                     </div>
                   </div>
