@@ -161,7 +161,7 @@ A: No — and providers who pitch it that way are selling something you don't wa
 
 ---
 
-## About Kynetic — AI Automation for Sydney SMEs
+## About Kynetic — AI Automation for Sydney Businesses
 
 We build AI automation systems for Sydney small and medium businesses that are ready to stop running on manual. Purpose-built automation that connects to the tools you're already using and handles your most time-consuming workflows.
 
