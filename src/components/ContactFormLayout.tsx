@@ -36,9 +36,12 @@ export default function ContactFormLayout({
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
     const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    const data = Object.fromEntries(formData.entries());
+
+    // Tag for n8n webhook routing
+    data.source = "primary_contact_form";
 
     try {
       const res = await submitContactForm(data);
@@ -46,6 +49,12 @@ export default function ContactFormLayout({
       if (res.success) {
         setSubmitStatus("success");
         formElement.reset();
+        
+        // Track Facebook Pixel Lead Event
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead');
+        }
+
         router.push("/thank-you");
       } else {
         console.error("Form action failed:", res.error);
@@ -123,12 +132,10 @@ export default function ContactFormLayout({
   return (
     <Row
       fillWidth
-      paddingX="s"
       horizontal="center"
       style={{
         backgroundColor: bgColor,
-        paddingTop: "100px",
-        paddingBottom: "100px",
+        padding: "100px 24px",
       }}
     >
       <Row
@@ -219,7 +226,7 @@ export default function ContactFormLayout({
               backgroundColor: cardBgColor,
               border: `1px solid ${cardBorderColor}`,
               borderRadius: "20px",
-              padding: "48px 40px",
+              padding: "clamp(32px, 5vw, 48px) clamp(20px, 4vw, 40px)",
               boxShadow: isDark ? "0 24px 80px rgba(0,0,0,0.5)" : "0 12px 60px rgba(11,19,32,0.06)",
               display: "flex",
               flexDirection: "column",
