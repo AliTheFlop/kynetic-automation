@@ -4,6 +4,7 @@ import { Row, Column } from "@once-ui-system/core";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { submitContactForm } from "@/app/actions";
+import { generateId, getExternalId, getTrackingCookie } from "@/utils/tracking";
 
 interface ContactDetail {
   icon: React.ReactNode;
@@ -40,8 +41,15 @@ export default function ContactFormLayout({
     const formData = new FormData(formElement);
     const data = Object.fromEntries(formData.entries());
 
-    // Tag for n8n webhook routing
+    // Generate unique Event and External IDs
+    const eventId = generateId();
+    
+    // Enrich with Meta tracking parameters
     data.source = "primary_contact_form";
+    data.event_id = eventId;
+    data.external_id = getExternalId();
+    data.fbp = getTrackingCookie("_fbp") || "";
+    data.fbc = getTrackingCookie("_fbc") || "";
 
     try {
       const res = await submitContactForm(data);
@@ -50,9 +58,12 @@ export default function ContactFormLayout({
         setSubmitStatus("success");
         formElement.reset();
         
-        // Track Facebook Pixel Lead Event
+        // Track Facebook Pixel Lead Event with Advanced Matching & Deduplication
         if (typeof window !== 'undefined' && (window as any).fbq) {
-          (window as any).fbq('track', 'Lead');
+          if (data.email) {
+            (window as any).fbq('init', '24622388897460037', { em: data.email, external_id: data.external_id });
+          }
+          (window as any).fbq('track', 'Lead', {}, { eventID: eventId });
         }
 
         router.push("/thank-you");
