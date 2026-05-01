@@ -124,14 +124,24 @@ export default function Navbar() {
                   gap: '12px',
                   zIndex: 100
                 }}>
-                  <Link href="/free-stuff" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
+                  <Link href="/4-tasks-to-automate-first" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
                     <Text 
                       variant="body-default-m"
-                      style={{ color: 'var(--bone)', transition: 'color 0.2s ease' }}
+                      style={{ color: 'var(--bone)', transition: 'color 0.2s ease', whiteSpace: 'nowrap' }}
                       onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--teal)'}
                       onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--bone)'}
                     >
-                      Free Stuff
+                      4 Tasks To Automate First
+                    </Text>
+                  </Link>
+                  <Link href="/inbox-ai-assistant" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
+                    <Text 
+                      variant="body-default-m"
+                      style={{ color: 'var(--bone)', transition: 'color 0.2s ease', whiteSpace: 'nowrap' }}
+                      onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--teal)'}
+                      onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--bone)'}
+                    >
+                      Inbox AI Assistant
                     </Text>
                   </Link>
                 </div>
@@ -254,18 +264,24 @@ export default function Navbar() {
               </button>
               
               <div style={{ 
-                height: isMobileResourcesOpen ? '40px' : 0, 
+                height: isMobileResourcesOpen ? 'auto' : 0, 
                 opacity: isMobileResourcesOpen ? 1 : 0,
                 overflow: 'hidden', 
                 transition: 'all 0.3s ease',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                gap: '16px',
                 marginTop: isMobileResourcesOpen ? '24px' : '0'
               }}>
-                <Link href="/free-stuff" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
-                  <Text variant="heading-strong-xl" style={{ color: 'var(--slate)' }}>
-                    Free Stuff
+                <Link href="/4-tasks-to-automate-first" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
+                  <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
+                    4 Tasks To Automate First
+                  </Text>
+                </Link>
+                <Link href="/inbox-ai-assistant" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
+                  <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
+                    Inbox AI Assistant
                   </Text>
                 </Link>
               </div>

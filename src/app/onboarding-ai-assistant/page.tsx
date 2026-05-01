@@ -8,7 +8,7 @@ import { submitContactForm } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { generateId, getExternalId, getTrackingCookie } from "@/utils/tracking";
 
-export default function FreeStuffPage() {
+export default function OnboardingAIAssistantPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | string>("idle");
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -27,7 +27,7 @@ export default function FreeStuffPage() {
     const eventId = generateId();
 
     // Tag where the lead came from
-    data.source = "lead_magnet_free_stuff";
+    data.source = "lead_magnet_onboarding_ai_assistant";
     data.event_id = eventId;
     data.external_id = getExternalId();
     data.fbp = getTrackingCookie("_fbp") || "";
@@ -39,7 +39,7 @@ export default function FreeStuffPage() {
       if (res.success) {
         setSubmitStatus("success");
         formElement.reset();
-        
+
         // Track Facebook Pixel Lead Event with Advanced Matching & Deduplication
         if (typeof window !== 'undefined' && (window as any).fbq) {
           if (data.email) {
@@ -48,7 +48,7 @@ export default function FreeStuffPage() {
           (window as any).fbq('track', 'Lead', {}, { eventID: eventId });
         }
 
-        router.push("/free-stuff/thank-you");
+        router.push("/onboarding-ai-assistant/thank-you");
       } else {
         setSubmitStatus(`Error: ${res.error}`);
       }
@@ -97,10 +97,10 @@ export default function FreeStuffPage() {
         <Column maxWidth="m" fillWidth gap="48" horizontal="center" style={{ textAlign: "center" }}>
           <Column gap="24" horizontal="center">
             <Heading variant="display-strong-m" style={{ color: "var(--bone)" }}>
-              Still Doing Admin Tasks By Hand?
+              Automate Your Client Onboarding
             </Heading>
             <Text variant="body-default-l" style={{ color: "var(--slate)", maxWidth: "600px" }}>
-              Sign up below to get the free guide on the 4 admin tasks you should automate first, and what to replace them with.
+              Sign up below to get the free guide on how to build an AI assistant to handle your client onboarding.
             </Text>
           </Column>
 

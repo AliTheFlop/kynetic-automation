@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Column } from "@once-ui-system/core";
 import Link from "next/link";
 
-export default function FreeStuffThankYouPage() {
+export default function FourTasksToAutomateFirstThankYouPage() {
   return (
     <Column
       fillWidth
