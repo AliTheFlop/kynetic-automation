@@ -144,6 +144,16 @@ export default function Navbar() {
                       Inbox AI Assistant
                     </Text>
                   </Link>
+                  <Link href="/email-customer-support-agent" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
+                    <Text 
+                      variant="body-default-m"
+                      style={{ color: 'var(--bone)', transition: 'color 0.2s ease', whiteSpace: 'nowrap' }}
+                      onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--teal)'}
+                      onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--bone)'}
+                    >
+                      AI Email Support Agent
+                    </Text>
+                  </Link>
                 </div>
               )}
             </div>
@@ -282,6 +292,11 @@ export default function Navbar() {
                 <Link href="/inbox-ai-assistant" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
                   <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
                     Inbox AI Assistant
+                  </Text>
+                </Link>
+                <Link href="/email-customer-support-agent" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
+                  <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
+                    AI Email Support Agent
                   </Text>
                 </Link>
               </div>
