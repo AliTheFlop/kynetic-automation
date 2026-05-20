@@ -97,7 +97,7 @@ export default function CustomAIAgentBetaPage() {
       <Navbar />
 
       <Column as="main" fillWidth horizontal="center" style={{ flex: 1, paddingBottom: "128px" }}>
-        
+
         {/* SECTION 1 - Hero */}
         <Column fillWidth paddingX="l" paddingY="128" horizontal="center" style={{ position: "relative" }}>
           {/* Subtle Background Glow */}
@@ -108,7 +108,7 @@ export default function CustomAIAgentBetaPage() {
           }} />
 
           <Column maxWidth="m" fillWidth gap="32" horizontal="center" style={{ textAlign: "center", position: "relative", zIndex: 1 }}>
-            
+
             <div style={{
               display: "inline-block",
               padding: "8px 16px",
@@ -128,7 +128,7 @@ export default function CustomAIAgentBetaPage() {
             <Heading variant="display-strong-m" style={{ color: "var(--bone)", maxWidth: "800px" }}>
               We'll Build You a Custom AI Support Agent For Free.
             </Heading>
-            
+
             <Column gap="12" horizontal="center">
               <Text variant="body-default-l" style={{ color: "var(--slate)", maxWidth: "600px" }}>
                 In exchange for 30 days of honest data and a video testimonial once it's working.
@@ -179,7 +179,7 @@ export default function CustomAIAgentBetaPage() {
                 Here's Exactly What You're Signing Up For
               </Heading>
             </Column>
-            
+
             <Grid columns="2" gap="32" s={{ columns: "1" }}>
               <Column gap="16" style={{
                 backgroundColor: "#121A26", padding: "32px", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.05)"
@@ -193,7 +193,7 @@ export default function CustomAIAgentBetaPage() {
                   <li>Full conversation logs. You get complete visibility the whole time</li>
                 </ul>
               </Column>
-              
+
               <Column gap="16" style={{
                 backgroundColor: "#121A26", padding: "32px", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.05)"
               }}>
@@ -233,7 +233,7 @@ export default function CustomAIAgentBetaPage() {
                   This is the automation infrastructure the agent runs on. Around <span style={{ color: "var(--bone)", fontWeight: 600 }}>$20–$50/month</span>. We'll walk you through setting it up, as it only takes about 10 minutes.
                 </Text>
               </Column>
-              
+
               <Column gap="12" style={{
                 backgroundColor: "#121A26", padding: "32px", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.05)"
               }}>
@@ -250,13 +250,13 @@ export default function CustomAIAgentBetaPage() {
           {/* SECTION 4 */}
           <Column fillWidth gap="40" style={{ paddingTop: "32px", paddingBottom: "48px" }} horizontal="center">
             <div style={{ height: "1px", width: "100%", backgroundColor: "rgba(255,255,255,0.05)", margin: "16px 0" }} />
-            
+
             <Column gap="8" horizontal="center" style={{ textAlign: "center" }}>
               <Heading variant="heading-strong-xl" style={{ color: "var(--bone)" }}>
                 Fair Enough to Be Skeptical
               </Heading>
             </Column>
-            
+
             <Column gap="20" style={{ maxWidth: "680px", width: "100%", margin: "0 auto" }}>
               <Text variant="body-default-m" style={{ color: "var(--slate)", lineHeight: "1.7" }}>
                 Most AI chatbots you've seen are a FAQ page with a personality slapped on top. They get confused, go generic, and frustrate your customers more than they help.
@@ -264,11 +264,11 @@ export default function CustomAIAgentBetaPage() {
               <Text variant="body-default-m" style={{ color: "var(--slate)", lineHeight: "1.7" }}>
                 The reason that happens is simple: they're not trained on <em>your</em> business. They're trained on the internet.
               </Text>
-              
+
               <div style={{ height: "1px", width: "100%", backgroundColor: "rgba(255,255,255,0.05)", margin: "24px 0" }} />
-              
+
               <Text variant="body-strong-m" style={{ color: "var(--bone)", marginBottom: "8px" }}>What we’re testing is different:</Text>
-              
+
               <Text variant="body-default-m" style={{ color: "var(--slate)", lineHeight: "1.7" }}>
                 We set up a <strong>RAG-powered knowledge base,</strong> which means the agent isn't guessing. It's pulling answers directly from your actual store data in real time. Your product catalogue, return policy, shipping rules, edge cases, etc…
               </Text>
@@ -285,7 +285,7 @@ export default function CustomAIAgentBetaPage() {
                 See Exactly What the Agent Does (2 mins)
               </Heading>
             </Column>
-            
+
             <AgentVideoShowcase />
 
             <Column gap="8" style={{ paddingLeft: "16px", borderLeft: "1px solid rgba(255,255,255,0.1)" }}>
@@ -306,7 +306,7 @@ export default function CustomAIAgentBetaPage() {
                 The Beta Is Right for You If...
               </Heading>
             </Column>
-            
+
             <Grid columns="2" gap="32" s={{ columns: "1" }}>
               <Column gap="16" style={{
                 backgroundColor: "rgba(16, 185, 129, 0.05)", padding: "32px", borderRadius: "16px", border: "1px solid rgba(16, 185, 129, 0.2)"
@@ -321,7 +321,7 @@ export default function CustomAIAgentBetaPage() {
                   <li>Willing to track honest numbers before and after</li>
                 </ul>
               </Column>
-              
+
               <Column gap="16" style={{
                 backgroundColor: "rgba(239, 68, 68, 0.05)", padding: "32px", borderRadius: "16px", border: "1px solid rgba(239, 68, 68, 0.2)"
               }}>
@@ -345,7 +345,7 @@ export default function CustomAIAgentBetaPage() {
                 A Few Things People Usually Ask
               </Heading>
             </Column>
-            
+
             <Column gap="24" style={{ maxWidth: "760px", width: "100%", margin: "0 auto" }}>
               {[
                 { q: "What happens after 30 days?", a: "We'll have an honest conversation. If the results are good and you want us to keep managing it, we'll talk about what that looks like." },
@@ -391,13 +391,36 @@ export default function CustomAIAgentBetaPage() {
               </Grid>
 
               <div>
-                <label htmlFor="phone" style={labelStyle}>Phone Number (Optional)</label>
-                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" style={inputStyle("phone")} onFocus={() => setFocusedField("phone")} onBlur={() => setFocusedField(null)} />
+                <label htmlFor="phone" style={labelStyle}>Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required style={inputStyle("phone")} onFocus={() => setFocusedField("phone")} onBlur={() => setFocusedField(null)} />
               </div>
 
               <div>
                 <label htmlFor="revenue" style={labelStyle}>Monthly revenue (approx)</label>
-                <input type="text" id="revenue" name="revenue" placeholder="e.g. $50k" required style={inputStyle("revenue")} onFocus={() => setFocusedField("revenue")} onBlur={() => setFocusedField(null)} />
+                <select
+                  id="revenue"
+                  name="revenue"
+                  required
+                  defaultValue=""
+                  style={{
+                    ...inputStyle("revenue"),
+                    appearance: "none",
+                    backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 16px center",
+                    paddingRight: "40px",
+                    cursor: "pointer"
+                  }}
+                  onFocus={() => setFocusedField("revenue")}
+                  onBlur={() => setFocusedField(null)}
+                >
+                  <option value="" disabled style={{ backgroundColor: "#0A0F17", color: "var(--slate)" }}>Select monthly revenue</option>
+                  <option value="0-5k" style={{ backgroundColor: "#0A0F17", color: "var(--bone)" }}>$0 – $5,000 / month</option>
+                  <option value="5k-10k" style={{ backgroundColor: "#0A0F17", color: "var(--bone)" }}>$5,000 – $10,000 / month</option>
+                  <option value="10k-20k" style={{ backgroundColor: "#0A0F17", color: "var(--bone)" }}>$10,000 – $20,000 / month</option>
+                  <option value="20k-50k" style={{ backgroundColor: "#0A0F17", color: "var(--bone)" }}>$20,000 – $50,000 / month</option>
+                  <option value="50k+" style={{ backgroundColor: "#0A0F17", color: "var(--bone)" }}>$50,000+ / month</option>
+                </select>
               </div>
 
               <div>
@@ -406,8 +429,8 @@ export default function CustomAIAgentBetaPage() {
               </div>
 
               <div>
-                <label htmlFor="specificTasks" style={labelStyle}>Anything specific you'd want the agent to handle?</label>
-                <textarea id="specificTasks" name="specificTasks" placeholder="e.g. order tracking, return queries..." required style={inputStyle("specificTasks", true)} onFocus={() => setFocusedField("specificTasks")} onBlur={() => setFocusedField(null)} />
+                <label htmlFor="specificTasks" style={labelStyle}>Anything you want us to know?</label>
+                <textarea id="specificTasks" name="specificTasks" placeholder="e.g. key details, special requirements, or questions..." style={inputStyle("specificTasks", true)} onFocus={() => setFocusedField("specificTasks")} onBlur={() => setFocusedField(null)} />
               </div>
 
               <Column gap="16" horizontal="center" style={{ marginTop: "16px" }}>
