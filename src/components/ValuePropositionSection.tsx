@@ -5,32 +5,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What exactly do you automate? What do you actually do to help my business?",
-    answer: "The stuff that's running through you personally right now. Lead follow-ups. Quote generation. Client onboarding. Scheduling. Invoice chasing. We find processes eating the most time in your business and make them run without anyone touching them. The business keeps moving while you're doing literally anything else."
+    question: "What's your guarantee?",
+    answer: "We stand behind our work. We offer a money back guarantee if you're not seeing results within the first 30 days."
   },
   {
-    question: "Will this actually work for my type of business?",
-    answer: "That's what the first call figures out. We try to figure out where you can save time and money within your current processes, and then tell you honestly whether automation fixes it. If it's not the right fit, we'll say so."
+    question: "What exactly do you do?",
+    answer: "We manage your Meta ad campaigns, build the follow-up sequences that run behind them, and integrate everything into your CRM so leads are captured, contacted, and tracked without you manually doing any of it."
   },
   {
-    question: "How is this different from tools I've already tried, like Zapier or a chatbot?",
-    answer: "Those tools still needed you to hold them together. When you run it with us, we'll handle the messy nodes, integrations, and bug fixes. For example, when a lead comes in, the system responds, qualifies, follows up, and flags you only if it actually needs a human. You wake up and the work has already happened."
+    question: "How is this different from just hiring a media buyer?",
+    answer: "A media buyer stops at the ad. We add another layer for automated follow ups that make the chances of actually converting a lead much higher."
   },
   {
-    question: "What does it cost, and how long before I see a return on my investment?",
-    answer: "Most clients recover the cost within the first two months through leads that used to go cold, quotes that used to take half a day, and follow-ups that used to not happen at all. We'll show you the numbers before you spend anything."
+    question: "What kind of businesses do you work with?",
+    answer: "We work with service businesses that have a clear offer and just need more of the right people to see it, and a proper system to handle it."
   },
   {
-    question: "How long does it take to set up, and how much of my time does it need?",
-    answer: "Two hours from you upfront so we understand exactly how your business runs. The automations are live within 14 days, and at that point we walk you through how to read what it's doing. Nothing technical, just \"here's where your leads are, here's what's been sent, here's what's coming.\" Once you've got that, you're done. The system runs. You'll notice it when things that used to fall through the cracks just stop falling through the cracks."
+    question: "What should I expect from your ads?",
+    answer: "The first 1-2 weeks is the optimisation phase, we test a bunch of different ad creatives to see what works. From there we push hard on what's working and kill what's not."
   },
   {
-    question: "What happens when something breaks or goes wrong? Am I on my own?",
-    answer: "That's what the ongoing management covers. You let us know, we fix it. You're not buying a tool and figuring it out yourself. You're handing the whole thing to us."
-  },
-  {
-    question: "Do I need to change the tools I'm already using?",
-    answer: "We try to work around what you've already got, because the goal is to make your existing setup actually function as one thing, but this could happen on rare occasions if you use niche software."
+    question: "What does it actually cost?",
+    answer: "Our service fee is a flat rate of $750/mo. No vague pricing or 6 month contracts here :-)"
   }
 ];
 
@@ -87,7 +83,7 @@ export default function ValuePropositionSection() {
               lineHeight: 1.15,
               margin: 0
             }}>
-              If a magic bullet existed, this would be it<span style={{ color: "var(--teal)" }}>.</span>
+              What if your marketing actually worked end to end<span style={{ color: "var(--teal)" }}>.</span>
             </h2>
 
             <p style={{
@@ -99,7 +95,7 @@ export default function ValuePropositionSection() {
               marginTop: "20px",
               marginBottom: 0
             }}>
-              We'll set up automations within your business to automatically handle enquiries, follow up with leads, and handle other admin tasks without you touching it. Your business takes on more, responds faster, and keeps moving.
+              We build the whole system: from ads that bring in the right people, to automated follow-ups that reply before your competitors
             </p>
           </div>
 

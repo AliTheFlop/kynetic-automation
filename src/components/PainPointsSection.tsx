@@ -5,8 +5,8 @@ import { ReactNode } from "react";
 
 const painPoints = [
   {
-    title: "Missed Enquiries",
-    body: "Calls and messages that go cold before anyone gets to them",
+    title: "Running Ads Is Hard",
+    body: "There's 20+ settings to choose from, and they could all make or break your ads.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -17,8 +17,8 @@ const painPoints = [
     )
   },
   {
-    title: "Slow Responses",
-    body: "Leads are won by whoever replies first",
+    title: "Slow Follow-Ups",
+    body: "The business that replies first wins the client. Right now, that's not you.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -27,8 +27,8 @@ const painPoints = [
     )
   },
   {
-    title: "Dropped Follow Ups",
-    body: "Warm prospects forgotten in the daily chaos",
+    title: "No Real System",
+    body: "Ads need a proper backend to catch and nurture what they bring in.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -36,8 +36,8 @@ const painPoints = [
     )
   },
   {
-    title: "Broken Handoffs",
-    body: "Information stuck in someone's inbox instead of where it belongs",
+    title: "Inconsistent Pipeline",
+    body: "Some months are packed, some are dead. You don't know why and can't predict either.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -46,8 +46,8 @@ const painPoints = [
     )
   },
   {
-    title: "Repeated Admin",
-    body: "The same reminder, update, and data entry every single week",
+    title: "Leads Going Cold",
+    body: "Ads are half the battle. By the time you reply at 6pm, they've already moved on.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -58,8 +58,8 @@ const painPoints = [
     )
   },
   {
-    title: "Context Switching",
-    body: "Getting out of real work to handle small basic things",
+    title: "Wearing Too Many Hats",
+    body: "Managing the ads, chasing leads, and running your business takes up too much time.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -97,7 +97,7 @@ export default function PainPointsSection() {
             margin: 0,
             textAlign: "center"
           }}>
-            You're not short on ambition.
+            You're not short on drive.
           </h2>
           <p style={{
             fontFamily: "var(--font-montserrat)",
@@ -107,7 +107,7 @@ export default function PainPointsSection() {
             margin: 0,
             textAlign: "center"
           }}>
-            But you <em style={{ fontStyle: "italic" }}>are</em> short on capacity...
+            But your marketing has gaps in it...
           </p>
         </Column>
 

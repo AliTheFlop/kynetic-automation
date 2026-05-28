@@ -38,6 +38,15 @@ export default function Navbar() {
     }
   };
 
+  const handleBookClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      document.getElementById('book-a-call')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '/#book-a-call');
+    }
+    setIsOpen(false);
+  };
+
   return (
     <>
       <style>{`
@@ -124,16 +133,6 @@ export default function Navbar() {
                   gap: '12px',
                   zIndex: 100
                 }}>
-                  <Link href="/4-tasks-to-automate-first" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
-                    <Text 
-                      variant="body-default-m"
-                      style={{ color: 'var(--bone)', transition: 'color 0.2s ease', whiteSpace: 'nowrap' }}
-                      onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--teal)'}
-                      onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--bone)'}
-                    >
-                      4 Tasks To Automate First
-                    </Text>
-                  </Link>
                   <Link href="/inbox-ai-assistant" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
                     <Text 
                       variant="body-default-m"
@@ -172,7 +171,7 @@ export default function Navbar() {
                 Blog
               </Text>
             </Link>
-            <Link href="/contact" style={{ textDecoration: 'none' }}>
+            <Link href="/#book-a-call" style={{ textDecoration: 'none' }} onClick={handleBookClick}>
               <button
                 style={{
                   backgroundColor: "var(--teal)",
@@ -197,7 +196,7 @@ export default function Navbar() {
                   e.currentTarget.style.filter = "brightness(1)";
                 }}
               >
-                Get in touch
+                Book a Call
               </button>
             </Link>
           </Row>
@@ -284,11 +283,6 @@ export default function Navbar() {
                 gap: '16px',
                 marginTop: isMobileResourcesOpen ? '24px' : '0'
               }}>
-                <Link href="/4-tasks-to-automate-first" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
-                  <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
-                    4 Tasks To Automate First
-                  </Text>
-                </Link>
                 <Link href="/inbox-ai-assistant" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
                   <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
                     Inbox AI Assistant
@@ -311,7 +305,7 @@ export default function Navbar() {
               </Text>
             </Link>
             
-            <Link href="/contact" style={{ textDecoration: 'none', width: '100%', maxWidth: '300px', marginTop: '20px' }} onClick={() => setIsOpen(false)}>
+            <Link href="/#book-a-call" style={{ textDecoration: 'none', width: '100%', maxWidth: '300px', marginTop: '20px' }} onClick={handleBookClick}>
               <button
                 style={{
                   backgroundColor: "var(--teal)",
@@ -326,7 +320,7 @@ export default function Navbar() {
                   cursor: "pointer",
                 }}
               >
-                Get in touch
+                Book a Call
               </button>
             </Link>
           </Column>

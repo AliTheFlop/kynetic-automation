@@ -329,11 +329,11 @@ export default function ContactFormLayout({
 
             {/* Row 6: Project Details */}
             <div>
-              <label htmlFor="projectDetails" style={labelStyle}>Tell Us About Your Project</label>
+              <label htmlFor="projectDetails" style={labelStyle}>Tell us about your business</label>
               <textarea
                 id="projectDetails"
                 name="projectDetails"
-                placeholder="What challenges are you facing? What does success look like for your business?"
+                placeholder="What are you selling, who to, and what's the biggest problem with your marketing right now?"
                 required
                 style={{
                   ...inputStyle("projectDetails"),
@@ -377,7 +377,7 @@ export default function ContactFormLayout({
                 e.currentTarget.style.filter = "brightness(1)";
               }}
             >
-              {isSubmitting ? "Submitting..." : submitStatus === "success" ? "Inquiry Sent!" : "Submit Inquiry"}
+              {isSubmitting ? "Submitting..." : submitStatus === "success" ? "Enquiry Sent!" : "Send Enquiry"}
             </button>
             {submitStatus !== "idle" && submitStatus !== "success" && (
               <div style={{ color: "#EF4444", fontSize: "14px", textAlign: "center", marginTop: "8px", fontFamily: "var(--font-montserrat)" }}>

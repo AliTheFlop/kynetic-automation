@@ -399,7 +399,7 @@ export default function CustomAIAgentBetaPage() {
                 <label htmlFor="revenue" style={labelStyle}>Monthly revenue (approx)</label>
                 <select
                   id="revenue"
-                  name="revenue"
+                  name="revenue" 
                   required
                   defaultValue=""
                   style={{

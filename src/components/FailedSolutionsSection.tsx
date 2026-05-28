@@ -4,8 +4,8 @@ import { Row, Column } from "@once-ui-system/core";
 
 const failedSolutions = [
   {
-    title: "DIY Automation",
-    body: "You built a few flows over a week, but they broke and you didn't notice for three days.",
+    title: "Running Ads Yourself",
+    body: "You've probably boosted a post and set up some campaigns... but it spent too much budget with nothing to show for it.",
     icon: (
       <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.8 }}>
         <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
@@ -18,8 +18,8 @@ const failedSolutions = [
     )
   },
   {
-    title: "Hiring a VA",
-    body: "Maybe you hired a VA. They helped until you realised you were spending an hour a day managing someone whose job was to save you time.",
+    title: "Hiring a Freelancer",
+    body: "Their ads worked decently well, but the follow-ups were rough. While leads came in, most of them quietly disappeared.",
     icon: (
       <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.8 }}>
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -29,8 +29,8 @@ const failedSolutions = [
     )
   },
   {
-    title: "All In One Platforms",
-    body: "Maybe you looked at a platform that promised to fix everything... but that got expensive quick!",
+    title: "Hiring an Agency",
+    body: "They cared for the first few weeks... but when the retainer hit and you got hooked, their true colours showed.",
     icon: (
       <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.8 }}>
         <rect x="3" y="3" width="7" height="7"></rect>
@@ -103,7 +103,7 @@ export default function FailedSolutionsSection() {
             margin: 0,
             textAlign: "center"
           }}>
-            You've probably already tried to solve this.
+            You've probably already tried to fix this.
           </h2>
           <p style={{
             fontFamily: "var(--font-montserrat)",
@@ -115,7 +115,7 @@ export default function FailedSolutionsSection() {
             textAlign: "center",
             lineHeight: 1.6
           }}>
-            The problem is that patching a manual business with more tools doesn't remove the manual dependency
+            There's just too many variables that need to click in place
           </p>
         </Column>
 
@@ -167,7 +167,7 @@ export default function FailedSolutionsSection() {
                 textTransform: "uppercase",
                 letterSpacing: "0.05em"
               }}>
-                Doesn't work
+                DIDN'T STICK
               </div>
               <div style={{ marginBottom: "20px" }}>
                 {solution.icon}

@@ -80,7 +80,7 @@ export default function HeroSection() {
               textTransform: "uppercase",
               marginBottom: "24px"
             }}>
-              AI AUTOMATION FOR SMES
+              META ADS SPECIALIST
             </div>
 
             {/* Headline */}
@@ -92,7 +92,7 @@ export default function HeroSection() {
               lineHeight: 1.1,
               margin: 0,
             }}>
-              Never worry about repetitive admin again<span style={{ color: "var(--teal)" }}>.</span>
+              Get More Clients With Meta Ads. Guaranteed<span style={{ color: "var(--teal)" }}>.</span>
             </h1>
 
             {/* Body */}
@@ -106,12 +106,20 @@ export default function HeroSection() {
               marginTop: "20px",
               marginBottom: "36px"
             }}>
-              We build and manage automations that give your business more output, faster responses, and cleaner follow-ups without adding another person to the payroll.
+              We run your meta ads and build systems behind them to make sure every lead has the highest chance of turning into a customer. Backed by a 30-day money back guarantee.
             </p>
 
             {/* CTA */}
             <Column gap="12" horizontal="start">
-              <Link href="/contact" style={{ textDecoration: 'none', display: 'block' }}>
+              <Link 
+                href="/#book-a-call" 
+                style={{ textDecoration: 'none', display: 'block' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('book-a-call')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '/#book-a-call');
+                }}
+              >
                 <button
                   style={{
                     backgroundColor: "var(--teal)",
@@ -137,16 +145,9 @@ export default function HeroSection() {
                     e.currentTarget.style.filter = "brightness(1)";
                   }}
                 >
-                  Get in touch
+                  Book a Call
                 </button>
               </Link>
-              <span style={{
-                fontFamily: "var(--font-montserrat)",
-                fontSize: "13px",
-                color: "var(--slate)",
-              }}>
-                We'll respond within 48 hours.
-              </span>
             </Column>
           </div>
 
@@ -194,16 +195,18 @@ export default function HeroSection() {
                 <div style={{ width: "12px", height: "12px", borderRadius: "50%", background: "rgba(39, 201, 63, 0.7)" }} />
               </div>
 
-              {/* Fake UI elements */}
-              <div style={{ width: "40%", height: "24px", background: "rgba(247,248,244,0.1)", borderRadius: "6px", marginTop: "12px" }} />
-              <div style={{ width: "100%", height: "48px", background: "rgba(24,195,200,0.05)", borderRadius: "6px", border: "1px dashed rgba(24,195,200,0.2)" }} />
-              <div style={{ width: "70%", height: "12px", background: "rgba(247,248,244,0.05)", borderRadius: "4px" }} />
-              <div style={{ width: "50%", height: "12px", background: "rgba(247,248,244,0.05)", borderRadius: "4px" }} />
+              {/* Text Output */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'flex-start', marginTop: '12px' }}>
+                <span style={{ color: 'var(--slate)', fontFamily: 'var(--font-mono)', fontSize: '14px' }}>→ New lead from Meta Ad</span>
+                <span style={{ color: 'var(--slate)', fontFamily: 'var(--font-mono)', fontSize: '14px' }}>→ Follow-up sent: 0:47s</span>
+                <span style={{ color: 'var(--slate)', fontFamily: 'var(--font-mono)', fontSize: '14px' }}>→ CRM updated</span>
+                <span style={{ color: 'var(--slate)', fontFamily: 'var(--font-mono)', fontSize: '14px' }}>→ Booking confirmed</span>
+              </div>
 
               <div style={{ flex: 1 }} />
 
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                <span style={{ color: 'var(--teal)', fontFamily: 'var(--font-mono)', fontSize: '16px', fontWeight: 600 }}>&gt;_ READY</span>
+                <span style={{ color: 'var(--teal)', fontFamily: 'var(--font-mono)', fontSize: '16px', fontWeight: 600 }}>_ READY</span>
               </div>
             </div>
           </div>
