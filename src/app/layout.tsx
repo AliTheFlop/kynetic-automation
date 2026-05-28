@@ -19,8 +19,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Kynetic | AI Automation for SMEs",
-  description: "We build and manage automations that give your business more output, faster responses, and cleaner follow-ups.",
+  title: "Kynetic | Meta Ads Specialist",
+  description: "We run your Meta ads and build the systems behind them to make sure every lead has the highest chance of turning into a customer.",
 };
 
 export default function RootLayout({
