@@ -1,18 +1,31 @@
 "use client";
 
 import { Column, Row, Heading, Text } from "@once-ui-system/core";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { submitContactForm } from "@/app/actions";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { generateId, getExternalId, getTrackingCookie } from "@/utils/tracking";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function MetaAdsTipsPage() {
+function MetaAdsTipsContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | string>("idle");
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const businessTypeParam = searchParams.get("UTM_BusinessType")?.toLowerCase();
+
+  const businessTypeMap: Record<string, string> = {
+    realestateagents: "Real Estate Agents",
+    ecommerceagencies: "E-Commerce Agencies",
+    privatetutors: "Private Tutors",
+    personaltrainers: "Personal Trainers",
+  };
+
+  const businessType = businessTypeParam ? businessTypeMap[businessTypeParam] : null;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,6 +45,10 @@ export default function MetaAdsTipsPage() {
     data.external_id = getExternalId();
     data.fbp = getTrackingCookie("_fbp") || "";
     data.fbc = getTrackingCookie("_fbc") || "";
+
+    if (businessType) {
+      data.business_type = businessType;
+    }
 
     try {
       const res = await submitContactForm(data);
@@ -84,7 +101,28 @@ export default function MetaAdsTipsPage() {
 
   return (
     <Column fillWidth fillHeight>
-      <Navbar />
+      <Row
+        as="header"
+        fillWidth
+        paddingX="s"
+        horizontal="center"
+        vertical="center"
+        style={{
+          height: "68px",
+          backgroundColor: "rgba(11, 19, 32, 0.85)",
+          borderBottom: "1px solid rgba(24, 195, 200, 0.12)",
+        }}
+      >
+        <div style={{ display: "flex" }}>
+          <Image
+            src="/logo-white.svg"
+            alt="Kynetic Logo"
+            width={100}
+            height={26}
+            priority
+          />
+        </div>
+      </Row>
 
       <Column
         as="main"
@@ -94,13 +132,18 @@ export default function MetaAdsTipsPage() {
         horizontal="center"
         style={{ flex: 1, backgroundColor: "var(--midnight)" }}
       >
-        <Column maxWidth="m" fillWidth gap="48" horizontal="center" style={{ textAlign: "center" }}>
-          <Column gap="24" horizontal="center">
+        <Column maxWidth="m" fillWidth gap="48" horizontal="center">
+          <Column gap="24" horizontal="center" style={{ textAlign: "center" }}>
+            {businessType && (
+              <Text variant="body-strong-m" style={{ color: "var(--teal)", textTransform: "uppercase", letterSpacing: "1px" }}>
+                For {businessType}
+              </Text>
+            )}
             <Heading variant="display-strong-m" style={{ color: "var(--bone)" }}>
               3 Tips To Get Better Results Using Meta Ads (+ A Bonus Trick)
             </Heading>
             <Text variant="body-default-l" style={{ color: "var(--slate)", maxWidth: "600px" }}>
-              Learn the proven strategies to optimize your Meta ad campaigns, reduce your cost per acquisition, and scale your results.
+              This guide includes 3 real-world actionable tips that you can implement <strong style={{ color: "var(--bone)" }}>today</strong> to improve your Meta Ads and get more results.
             </Text>
           </Column>
 
@@ -121,12 +164,12 @@ export default function MetaAdsTipsPage() {
             onSubmit={handleSubmit}
           >
             <div>
-              <label htmlFor="firstName" style={labelStyle}>First Name</label>
+              <label htmlFor="firstName" style={labelStyle}>Name</label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
-                placeholder="First Name"
+                placeholder="Name"
                 required
                 style={inputStyle("firstName")}
                 onFocus={() => setFocusedField("firstName")}
@@ -184,10 +227,77 @@ export default function MetaAdsTipsPage() {
               </div>
             )}
           </form>
+
+          <Column style={{ maxWidth: "700px", width: "100%", marginTop: "64px", padding: "0 24px" }} gap="32" horizontal="center">
+            <Column gap="8" horizontal="center" style={{ textAlign: "center" }}>
+              <Text variant="body-strong-s" style={{ color: "var(--teal)", textTransform: "uppercase", letterSpacing: "2px" }}>
+                What&apos;s inside
+              </Text>
+              <Heading variant="heading-strong-xl" style={{ color: "var(--bone)" }}>
+                6 actionable strategies you can use today
+              </Heading>
+            </Column>
+
+            <Column gap="16" fillWidth>
+              {[
+                "What business types Meta Ads works best for (and who should be running something else entirely)",
+                "The best way to use Meta Ad Library to pull unlimited creative ideas from outside markets",
+                "The reason why your ads go from the best week ever, to the worst week ever with zero warning",
+                "Why most businesses leave a huge chunk of leads on the table by skipping this one simple campaign type",
+                "The 3-metric method for knowing when to rotate your creatives (and when to leave them alone)",
+                "How to recreate a competitor's best-performing static ad in 30 seconds"
+              ].map((text, i) => (
+                <Row
+                  key={i}
+                  fillWidth
+                  vertical="center"
+                  gap="20"
+                  style={{
+                    backgroundColor: "#121A26",
+                    border: "1px solid rgba(24,195,200,0.15)",
+                    borderRadius: "16px",
+                    padding: "20px 24px",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
+                  }}
+                >
+                  <div style={{
+                    minWidth: "28px",
+                    height: "28px",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--teal)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    boxShadow: "0 0 12px rgba(24,195,200,0.4)"
+                  }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1320" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <Text variant="body-default-m" style={{ color: "var(--bone)", lineHeight: "1.5" }}>
+                    {text}
+                  </Text>
+                </Row>
+              ))}
+            </Column>
+          </Column>
         </Column>
       </Column>
 
       <Footer />
     </Column>
+  );
+}
+
+export default function MetaAdsTipsPage() {
+  return (
+    <Suspense fallback={
+      <Column fillWidth fillHeight horizontal="center" vertical="center" style={{ backgroundColor: "var(--midnight)" }}>
+        <Text variant="body-default-m" style={{ color: "var(--bone)" }}>Loading...</Text>
+      </Column>
+    }>
+      <MetaAdsTipsContent />
+    </Suspense>
   );
 }
