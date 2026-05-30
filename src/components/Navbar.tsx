@@ -133,6 +133,16 @@ export default function Navbar() {
                   gap: '12px',
                   zIndex: 100
                 }}>
+                  <Link href="/meta-ads-tips" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
+                    <Text 
+                      variant="body-default-m"
+                      style={{ color: 'var(--bone)', transition: 'color 0.2s ease', whiteSpace: 'nowrap' }}
+                      onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--teal)'}
+                      onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--bone)'}
+                    >
+                      3 Tips To Get Better Results Using Meta Ads
+                    </Text>
+                  </Link>
                   <Link href="/inbox-ai-assistant" style={{ textDecoration: 'none' }} onClick={() => setIsResourcesOpen(false)}>
                     <Text 
                       variant="body-default-m"
@@ -283,6 +293,11 @@ export default function Navbar() {
                 gap: '16px',
                 marginTop: isMobileResourcesOpen ? '24px' : '0'
               }}>
+                <Link href="/meta-ads-tips" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
+                  <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
+                    3 Tips To Get Better Results Using Meta Ads
+                  </Text>
+                </Link>
                 <Link href="/inbox-ai-assistant" style={{ textDecoration: 'none' }} onClick={() => setIsOpen(false)}>
                   <Text variant="heading-strong-l" style={{ color: 'var(--slate)', textAlign: 'center' }}>
                     Inbox AI Assistant
