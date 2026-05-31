@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Column } from "@once-ui-system/core";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function MetaAdsTipsThankYouPage() {
   return (
@@ -14,6 +15,15 @@ export default function MetaAdsTipsThankYouPage() {
         minHeight: "100vh",
       }}
     >
+      <Script id="openai-conversion" strategy="afterInteractive">
+        {`
+          oaiq("measure", "lead_created", {
+            type: "customer_action",
+            amount: 0,
+            currency: "USD"
+          });
+        `}
+      </Script>
       <Navbar />
 
       <Column

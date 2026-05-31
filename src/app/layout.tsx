@@ -45,6 +45,15 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
+        <Script id="openai-ads" strategy="afterInteractive">
+          {`
+            !function(w, d, s, u) {if (w.oaiq) return;var q = function() {q.q.push(arguments);};q.q = [];w.oaiq = q;var j = d.createElement(s);j.async = 1;j.src = u;var f = d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j, f);}(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+            oaiq("init", {
+              pixelId: "2v2rTwYFAteTbqW3ivzLqn",
+              debug: true
+            });
+          `}
+        </Script>
       </head>
       <body style={{ margin: 0, padding: 0, minHeight: '100vh', display: 'flex', flexDirection: 'column', fontFamily: 'var(--font-montserrat)' }}>
         <LayoutProvider>
