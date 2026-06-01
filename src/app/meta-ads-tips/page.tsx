@@ -23,6 +23,7 @@ function MetaAdsTipsContent() {
     ecommerceagencies: "E-Commerce Agencies",
     privatetutors: "Private Tutors",
     personaltrainers: "Personal Trainers",
+    chatgpt: "ChatGPT",
   };
 
   const businessType = businessTypeParam ? businessTypeMap[businessTypeParam] : null;
